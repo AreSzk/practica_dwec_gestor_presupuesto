@@ -315,6 +315,19 @@ let filtrarResultados = new filtrarGastoWeb();
 filtrarResultados.formulario = formulario;
 formulario.addEventListener('submit', filtrarResultados);
 
+function guardarGastosWeb(){
+    this.handleEvent = function(event){
+        event.preventDefault();
+        localStorage.setItem("GestorGastosDWEC", JSON.stringify(gp.listarGastos()));
+    }
+    repintar();
+}
+
+function cargarGastosWeb(){
+
+    repintar();
+}
+
 export{
     mostrarDatoEnId,
     mostrarGastoWeb,
@@ -323,4 +336,6 @@ export{
     repintar,
     actualizarPresupuestoWeb,
     nuevoGastoWeb,
+    guardarGastosWeb,
+    cargarGastosWeb
 }
