@@ -315,7 +315,6 @@ let filtrarResultados = new filtrarGastoWeb();
 filtrarResultados.formulario = formulario;
 formulario.addEventListener('submit', filtrarResultados);
 
-
 export{
     mostrarDatoEnId,
     mostrarGastoWeb,
