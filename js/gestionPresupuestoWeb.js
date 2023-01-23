@@ -335,6 +335,7 @@ function cargarGastosWeb(){
             gp.cargarGastos([]);
         }
         repintar();
+    }
 }
 
 let botonCargarGasto = document.getElementById('cargar-gastos');
