@@ -1,5 +1,5 @@
 import * as gp from './gestionPresupuesto.js';
-
+console.log(testApi)
 
 function repintar(){
     mostrarDatoEnId(gp.mostrarPresupuesto(), "presupuesto");
@@ -341,6 +341,18 @@ function cargarGastosWeb(){
 let botonCargarGasto = document.getElementById('cargar-gastos');
 botonCargarGasto.addEventListener("click", new cargarGastosWeb());
 
+function cargarGastosApi() {
+    const nombreUsuario = document.querySelector("#nombre_usuario").value;
+    const API_URL = `https://server.api/gastos/${nombreUsuario}`;
+  
+    fetch(API_URL)
+      .then(response => response.json())
+      .then(gastos => {
+        cargarGastos(gastos);
+        repintar();
+      });
+  }
+
 export{
     mostrarDatoEnId,
     mostrarGastoWeb,
@@ -350,5 +362,6 @@ export{
     actualizarPresupuestoWeb,
     nuevoGastoWeb,
     guardarGastosWeb,
-    cargarGastosWeb
+    cargarGastosWeb,
+    cargarGastosApi
 }
